@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
-import { tourPackages } from "@/data/packages";
 import { destinations } from "@/data/destinations";
 import { blogs } from "@/data/blogs";
 
@@ -12,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/services",
-    "/packages",
     "/destinations",
     "/blog",
     "/gallery",
@@ -32,15 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // 3. Tour Packages Dynamic Pages
-  const packagePages = tourPackages.map((pkg) => ({
-    url: `${baseUrl}/packages/${pkg.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.9, // Higher priority for booking landing pages
-  }));
-
-  // 4. Destinations Dynamic Pages
+  // 3. Destinations Dynamic Pages
   const destinationPages = destinations.map((dest) => ({
     url: `${baseUrl}/destinations/${dest.slug}`,
     lastModified: new Date(),
@@ -48,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // 5. Blogs Dynamic Pages
+  // 4. Blogs Dynamic Pages
   const blogPages = blogs.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(),
@@ -59,7 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages,
     ...servicePages,
-    ...packagePages,
     ...destinationPages,
     ...blogPages,
   ];

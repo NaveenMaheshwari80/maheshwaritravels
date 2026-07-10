@@ -22,7 +22,6 @@ export default function Footer() {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Our Services", href: "/services" },
-    { name: "Tour Packages", href: "/packages" },
     { name: "Destinations", href: "/destinations" },
     { name: "Latest Blog", href: "/blog" },
     { name: "Photo Gallery", href: "/gallery" },

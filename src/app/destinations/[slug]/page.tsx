@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { destinations } from "@/data/destinations";
-import { tourPackages } from "@/data/packages";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import SchemaOrg from "@/components/shared/SchemaOrg";
 import EnquiryForm from "@/components/shared/EnquiryForm";
-import { Compass, Calendar, Award, CheckCircle, Clock, Tag } from "lucide-react";
+import { Compass, Calendar, Award, CheckCircle } from "lucide-react";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -40,11 +39,6 @@ export default async function DestinationDetailPage({ params }: PageProps) {
   if (!dest) {
     notFound();
   }
-
-  // Filter tour packages related to this destination
-  const relatedPackages = tourPackages.filter(
-    (pkg) => pkg.destination.toLowerCase() === dest.name.toLowerCase()
-  );
 
   const destinationSchema = {
     "@context": "https://schema.org",
@@ -132,43 +126,6 @@ export default async function DestinationDetailPage({ params }: PageProps) {
                 ))}
               </div>
             </div>
-
-            {/* Recommended Packages */}
-            {relatedPackages.length > 0 && (
-              <div className="space-y-6 pt-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3">
-                  Recommended {dest.name} Packages
-                </h2>
-                <div className="space-y-4">
-                  {relatedPackages.map((pkg) => (
-                    <div
-                      key={pkg.slug}
-                      className="border border-slate-100 rounded-2xl p-6 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:bg-slate-50 transition-colors"
-                    >
-                      <div className="space-y-2">
-                        <h3 className="font-bold text-slate-800 text-base sm:text-lg">{pkg.name}</h3>
-                        <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-500">
-                          <span className="flex items-center">
-                            <Clock className="h-3.5 w-3.5 mr-1 text-blue-500" />
-                            {pkg.duration}
-                          </span>
-                          <span className="flex items-center">
-                            <Tag className="h-3.5 w-3.5 mr-1 text-emerald-500" />
-                            Starting ₹{pkg.price.toLocaleString("en-IN")}
-                          </span>
-                        </div>
-                      </div>
-                      <Link
-                        href={`/packages/${pkg.slug}`}
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition-colors shadow-md"
-                      >
-                        View Itinerary
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
 
           </div>
 

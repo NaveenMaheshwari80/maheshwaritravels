@@ -6,9 +6,6 @@ import Hero from "@/components/sections/Hero";
 const ServicesOverview = dynamic(() => import("@/components/sections/ServicesOverview"), {
   loading: () => <div className="h-96 bg-slate-50 animate-pulse rounded-3xl m-8" />
 });
-const FeaturedPackages = dynamic(() => import("@/components/sections/FeaturedPackages"), {
-  loading: () => <div className="h-[500px] bg-white animate-pulse rounded-3xl m-8" />
-});
 const PopularDestinations = dynamic(() => import("@/components/sections/PopularDestinations"), {
   loading: () => <div className="h-96 bg-slate-50 animate-pulse rounded-3xl m-8" />
 });
@@ -36,7 +33,6 @@ export default function Home() {
 
       {/* Below the fold sections load lazily in chunks */}
       <ServicesOverview />
-      <FeaturedPackages />
       <PopularDestinations />
       <WhyChooseUs />
       <TestimonialsSection />
