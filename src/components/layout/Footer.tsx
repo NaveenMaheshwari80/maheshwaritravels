@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Compass, Phone, Mail, MapPin, Send, MessageSquare } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Send, MessageSquare } from "lucide-react";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -42,8 +43,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
         {/* Column 1: Company Profile & Info */}
         <div className="space-y-6">
-          <Link href="/" className="flex items-center space-x-2">
-            <Compass className="h-8 w-8 text-emerald-400" />
+          <Link href="/" className="flex items-center space-x-2.5">
+            <div className="relative h-9 w-9 shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Maheshwari Travels Logo"
+                fill
+                sizes="36px"
+                className="object-contain"
+              />
+            </div>
             <div className="flex flex-col">
               <span className="font-bold text-xl text-white tracking-tight">Maheshwari</span>
               <span className="text-[10px] uppercase text-emerald-400 tracking-[0.2em] font-semibold -mt-1.5">

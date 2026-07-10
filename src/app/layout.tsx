@@ -235,11 +235,15 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://wa.me" />
         <link rel="dns-prefetch" href="https://maps.google.com" />
 
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/favicon.ico" />
+        {/* Favicon - Custom Maheshwari Travels Logo */}
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta name="msapplication-TileImage" content="/favicon.png" />
+        <meta name="msapplication-TileColor" content="#1e3a5f" />
+        <meta name="theme-color" content="#1e3a5f" />
       </head>
-      <body className="min-h-full flex flex-col bg-white text-slate-900 antialiased">
+      <body className="min-h-full flex flex-col bg-white text-slate-900 antialiased" suppressHydrationWarning>
         {/* Skip to main content - accessibility + SEO */}
         <a href="#main-content" className="skip-link">
           Skip to main content

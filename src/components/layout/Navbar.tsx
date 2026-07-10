@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Compass, Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,11 +37,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
-          <Link href="/" className="flex items-center space-x-2 group" aria-label="Maheshwari Travels - Home">
-            <Compass
-              className="h-8 w-8 text-blue-600 transition-transform duration-500 group-hover:rotate-180"
-              aria-hidden="true"
-            />
+          <Link href="/" className="flex items-center space-x-2.5 group" aria-label="Maheshwari Travels - Home">
+            <div className="relative h-9 w-9 shrink-0 transition-transform duration-500 group-hover:scale-110">
+              <Image
+                src="/logo.png"
+                alt="Maheshwari Travels Logo"
+                fill
+                sizes="36px"
+                className="object-contain"
+                priority
+              />
+            </div>
             <div className="flex flex-col">
               <span className="font-bold text-xl sm:text-2xl tracking-tight font-sans text-slate-900">
                 Maheshwari
