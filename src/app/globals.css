@@ -73,6 +73,25 @@ svg {
   animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+@keyframes roadMove {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(50%); }
+}
+
+.animate-road-move {
+  animation: roadMove 0.4s linear infinite;
+}
+
+@keyframes spinFast {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-fast {
+  animation: spinFast 0.5s linear infinite;
+}
+
+
 .hover-card-lift {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }

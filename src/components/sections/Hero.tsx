@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search, MapPin, Calendar, Users } from "lucide-react";
 import Image from "next/image";
+import Hero3DVehicle from "./Hero3DVehicle";
 
 export default function Hero() {
   const router = useRouter();
@@ -138,6 +139,11 @@ export default function Hero() {
             <span className="lg:hidden xl:inline">Plan My Trip</span>
           </button>
         </form>
+
+        {/* 3D Interactive Travel Cruiser & Winding Road Visualizer */}
+        <div className="pt-2 animate-fade-in-up delay-300">
+          <Hero3DVehicle />
+        </div>
       </div>
 
       {/* Subtle bottom fade to overlay onto sections */}
