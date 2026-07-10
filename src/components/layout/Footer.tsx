@@ -188,7 +188,7 @@ export default function Footer() {
       {/* Footer Bottom Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
         <div className="text-center md:text-left">
-          © {new Date().getFullYear()} Maheshwari Travels. All Rights Reserved. Owner: Deepak Maheshwari.
+          © {new Date().getFullYear()} Maheshwari Travels. All Rights Reserved. Owner: Deepak Maheshwari. | <a href="https://stackflowdev.com" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 font-bold transition-colors">Designed by StackFlowDev.com</a>
         </div>
         <div className="flex space-x-6">
           <Link href="/privacy-policy" className="hover:text-slate-300">
