@@ -1,8 +1,9 @@
 import React from "react";
+import Image from "next/image";
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import SchemaOrg from "@/components/shared/SchemaOrg";
-import { ShieldCheck, Users, Eye, Target, Compass, Award } from "lucide-react";
+import { ShieldCheck, Users, Eye, Target, Award, Compass } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Maheshwari Travels Jaipur",
@@ -101,29 +102,42 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Profile Card Column */}
+          {/* Profile Card Column — Owner Photo */}
           <div className="lg:col-span-5">
-            <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 space-y-6 shadow-sm">
-              <div className="flex items-center space-x-4">
-                <div className="h-16 w-16 rounded-full bg-blue-600 text-white font-extrabold text-xl flex items-center justify-center border-2 border-white shadow-md">
-                  DM
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900 text-lg">Deepak Maheshwari</h3>
-                  <span className="text-xs font-semibold text-emerald-600 uppercase tracking-wider">Founder & Proprietor</span>
+            <div className="bg-slate-50 border border-slate-100 rounded-3xl overflow-hidden shadow-lg">
+              {/* Owner Photo — Large */}
+              <div className="relative w-full h-80 sm:h-96">
+                <Image
+                  src="/Owner.png"
+                  alt="Deepak Maheshwari - Founder & Proprietor, Maheshwari Travels"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover object-top"
+                  priority
+                />
+                {/* Gradient overlay at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
+                {/* Name badge over photo */}
+                <div className="absolute bottom-5 left-5 right-5">
+                  <h3 className="font-extrabold text-white text-xl drop-shadow">Deepak Maheshwari</h3>
+                  <span className="text-xs font-bold text-emerald-300 uppercase tracking-widest">Founder &amp; Proprietor</span>
                 </div>
               </div>
-              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed italic">
-                &ldquo;Travel has the power to change perspectives. At Maheshwari Travels, our vision is to provide hassle-free packages that inspire confidence and create timeless memories for families and couples.&rdquo;
-              </p>
-              <div className="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-500">
-                <div>
-                  <span className="font-semibold text-slate-700 block">Office Address:</span>
-                  56, Bhagwati Nagar, Niwaru Road, Jhotwara, Jaipur, RJ
-                </div>
-                <div>
-                  <span className="font-semibold text-slate-700 block">Helplines:</span>
-                  +91 9829135440, +91 8209411937, +91 9983173115
+
+              {/* Card Body */}
+              <div className="p-6 space-y-4">
+                <p className="text-slate-600 text-sm leading-relaxed italic border-l-4 border-emerald-400 pl-4">
+                  &ldquo;Travel has the power to change perspectives. At Maheshwari Travels, our vision is to provide hassle-free packages that inspire confidence and create timeless memories for families and couples.&rdquo;
+                </p>
+                <div className="border-t border-slate-100 pt-4 space-y-2 text-xs text-slate-500">
+                  <div>
+                    <span className="font-semibold text-slate-700 block">Office Address:</span>
+                    56, Bhagwati Nagar, Niwaru Road, Jhotwara, Jaipur, RJ
+                  </div>
+                  <div>
+                    <span className="font-semibold text-slate-700 block">Helplines:</span>
+                    +91 9829135440, +91 8209411937, +91 9983173115
+                  </div>
                 </div>
               </div>
             </div>
