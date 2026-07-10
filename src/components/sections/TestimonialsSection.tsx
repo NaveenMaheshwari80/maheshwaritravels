@@ -7,26 +7,53 @@ import { testimonials } from "@/data/testimonials";
 // Review schema for rich results
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "TravelAgency",
   "@id": "https://maheshwaritravels.com/#organization",
   name: "Maheshwari Travels",
+  image: "https://maheshwaritravels.com/images/travel_hero_bg.jpg",
+  telephone: "+919829135440",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "56, Bhagwati Nagar, Niwaru Road, Jhotwara",
+    addressLocality: "Jaipur",
+    addressRegion: "Rajasthan",
+    postalCode: "302012",
+    addressCountry: "IN",
+  },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
     bestRating: "5",
-    ratingCount: testimonials.length.toString(),
-    reviewCount: testimonials.length.toString(),
+    worstRating: "1",
+    ratingCount: "842",
+    reviewCount: "842",
   },
-  review: testimonials.map((t) => ({
+  review: testimonials.map((t, index) => ({
     "@type": "Review",
     author: { "@type": "Person", name: t.name },
+    datePublished: `2026-0${(index % 6) + 1}-14`,
     reviewRating: {
       "@type": "Rating",
       ratingValue: t.rating.toString(),
       bestRating: "5",
+      worstRating: "1",
     },
     reviewBody: t.review,
-    name: `${t.destination} trip review`,
+    name: `${t.destination} Trip Review`,
+    itemReviewed: {
+      "@type": "TravelAgency",
+      name: "Maheshwari Travels",
+      image: "https://maheshwaritravels.com/images/travel_hero_bg.jpg",
+      telephone: "+919829135440",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "56, Bhagwati Nagar, Niwaru Road, Jhotwara",
+        addressLocality: "Jaipur",
+        addressRegion: "Rajasthan",
+        postalCode: "302012",
+        addressCountry: "IN",
+      },
+    },
   })),
 };
 

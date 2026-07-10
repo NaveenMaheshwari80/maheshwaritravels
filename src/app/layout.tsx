@@ -164,21 +164,11 @@ const organizationSchema = {
     { "@type": "AdministrativeArea", name: "Rajasthan" },
     { "@type": "City", name: "Jaipur" },
   ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Tour Packages",
-    itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Kashmir Tour Package" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Goa Beach Holiday" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Rajasthan Heritage Tour" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Kerala Backwaters Package" } },
-      { "@type": "Offer", itemOffered: { "@type": "Product", name: "International Tour Packages" } },
-    ],
-  },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
     bestRating: "5",
+    worstRating: "1",
     ratingCount: "842",
     reviewCount: "842",
   },
