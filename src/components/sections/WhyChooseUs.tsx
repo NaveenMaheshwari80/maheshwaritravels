@@ -51,11 +51,11 @@ export default function WhyChooseUs() {
             <div className="border-t border-slate-100 pt-6 grid grid-cols-2 gap-4">
               <div>
                 <span className="block text-3xl font-extrabold text-blue-600">10,000+</span>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Happy Travelers</span>
+                <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">Happy Travelers</span>
               </div>
               <div>
                 <span className="block text-3xl font-extrabold text-emerald-600">15+</span>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Years Experience</span>
+                <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">Years Experience</span>
               </div>
             </div>
           </div>

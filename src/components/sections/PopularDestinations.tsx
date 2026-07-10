@@ -43,7 +43,8 @@ export default function PopularDestinations() {
                 src={featuredDest[0].image || "/images/travel_hero_bg.jpg"}
                 alt={`${featuredDest[0].name} - Top travel destination in India`}
                 fill
-                sizes="(max-width: 1024px) 100vw, 58vw"
+                quality={65}
+                sizes="(max-width: 640px) 640px, (max-width: 1024px) 800px, 700px"
                 className="object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-transparent" />
@@ -83,7 +84,8 @@ export default function PopularDestinations() {
                     src={dest.image || "/images/travel_hero_bg.jpg"}
                     alt={`${dest.name} tour packages from Jaipur`}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 17vw"
+                    quality={60}
+                    sizes="(max-width: 640px) 350px, (max-width: 1024px) 250px, 200px"
                     className="object-cover object-center transform transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10" />

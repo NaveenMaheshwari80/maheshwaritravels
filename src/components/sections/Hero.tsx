@@ -34,7 +34,8 @@ export default function Hero() {
           fill
           priority
           fetchPriority="high"
-          sizes="100vw"
+          quality={60}
+          sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-slate-900/40" /> {/* Dark gradient overlay */}
@@ -66,10 +67,10 @@ export default function Hero() {
           className="max-w-4xl mx-auto glassmorphism rounded-3xl p-4 sm:p-6 shadow-2xl flex flex-col lg:flex-row gap-4 items-center animate-fade-in-up delay-200"
         >
           {/* Destination */}
-          <div className="w-full flex items-center space-x-3 bg-white/90 text-slate-800 px-4 py-3 rounded-2xl border border-slate-100">
-            <MapPin className="h-5 w-5 text-blue-600 shrink-0" />
+          <div className="w-full flex items-center space-x-3 bg-white/95 text-slate-800 px-4 py-3 rounded-2xl border border-slate-200">
+            <MapPin className="h-5 w-5 text-blue-600 shrink-0" aria-hidden="true" />
             <div className="flex-grow text-left">
-              <label htmlFor="hero-dest" className="block text-[10px] uppercase font-bold text-slate-400">
+              <label htmlFor="hero-dest" className="block text-[11px] uppercase font-bold text-slate-600">
                 Where to?
               </label>
               <input
@@ -78,24 +79,26 @@ export default function Hero() {
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
                 placeholder="e.g. Kashmir, Goa, Europe"
-                className="w-full text-sm font-semibold bg-transparent border-0 p-0 focus:ring-0 focus:outline-none placeholder-slate-400"
+                aria-label="Enter destination where you want to travel"
+                className="w-full text-sm font-semibold bg-transparent border-0 p-0 focus:ring-0 focus:outline-none placeholder-slate-500 text-slate-900"
                 required
               />
             </div>
           </div>
 
           {/* Travel Month */}
-          <div className="w-full flex items-center space-x-3 bg-white/90 text-slate-800 px-4 py-3 rounded-2xl border border-slate-100">
-            <Calendar className="h-5 w-5 text-blue-600 shrink-0" />
+          <div className="w-full flex items-center space-x-3 bg-white/95 text-slate-800 px-4 py-3 rounded-2xl border border-slate-200">
+            <Calendar className="h-5 w-5 text-blue-600 shrink-0" aria-hidden="true" />
             <div className="flex-grow text-left">
-              <label htmlFor="hero-month" className="block text-[10px] uppercase font-bold text-slate-400">
+              <label htmlFor="hero-month" className="block text-[11px] uppercase font-bold text-slate-600">
                 When?
               </label>
               <select
                 id="hero-month"
                 value={month}
                 onChange={(e) => setMonth(e.target.value)}
-                className="w-full text-sm font-semibold bg-transparent border-0 p-0 focus:ring-0 focus:outline-none text-slate-700 cursor-pointer"
+                aria-label="Select travel month"
+                className="w-full text-sm font-semibold bg-transparent border-0 p-0 focus:ring-0 focus:outline-none text-slate-800 cursor-pointer"
               >
                 <option value="">Any Month</option>
                 <option value="Jan-Feb">Jan - Feb</option>
@@ -109,17 +112,18 @@ export default function Hero() {
           </div>
 
           {/* Travelers Count */}
-          <div className="w-full flex items-center space-x-3 bg-white/90 text-slate-800 px-4 py-3 rounded-2xl border border-slate-100">
-            <Users className="h-5 w-5 text-blue-600 shrink-0" />
+          <div className="w-full flex items-center space-x-3 bg-white/95 text-slate-800 px-4 py-3 rounded-2xl border border-slate-200">
+            <Users className="h-5 w-5 text-blue-600 shrink-0" aria-hidden="true" />
             <div className="flex-grow text-left">
-              <label htmlFor="hero-travelers" className="block text-[10px] uppercase font-bold text-slate-400">
+              <label htmlFor="hero-travelers" className="block text-[11px] uppercase font-bold text-slate-600">
                 Guests
               </label>
               <select
                 id="hero-travelers"
                 value={travelers}
                 onChange={(e) => setTravelers(e.target.value)}
-                className="w-full text-sm font-semibold bg-transparent border-0 p-0 focus:ring-0 focus:outline-none text-slate-700 cursor-pointer"
+                aria-label="Select number of guests"
+                className="w-full text-sm font-semibold bg-transparent border-0 p-0 focus:ring-0 focus:outline-none text-slate-800 cursor-pointer"
               >
                 <option value="1">1 Guest</option>
                 <option value="2">2 Guests (Couple)</option>

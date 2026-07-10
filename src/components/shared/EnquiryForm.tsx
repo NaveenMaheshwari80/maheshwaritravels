@@ -124,7 +124,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
           Full Name *
         </label>
         <div className="relative">
-          <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+          <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" aria-hidden="true" />
           <input
             type="text"
             id="name"
@@ -141,7 +141,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
         </div>
         {errors.name && (
           <p className="text-xs text-red-500 flex items-center space-x-1">
-            <AlertCircle className="h-3.5 w-3.5" /> <span>{errors.name}</span>
+            <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> <span>{errors.name}</span>
           </p>
         )}
       </div>
@@ -153,7 +153,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
             Email Address *
           </label>
           <div className="relative">
-            <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+            <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" aria-hidden="true" />
             <input
               type="email"
               id="email"
@@ -170,7 +170,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
           </div>
           {errors.email && (
             <p className="text-xs text-red-500 flex items-center space-x-1">
-              <AlertCircle className="h-3.5 w-3.5" /> <span>{errors.email}</span>
+              <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> <span>{errors.email}</span>
             </p>
           )}
         </div>
@@ -181,7 +181,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
             Mobile Number *
           </label>
           <div className="relative">
-            <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+            <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" aria-hidden="true" />
             <input
               type="tel"
               id="phone"
@@ -198,7 +198,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
           </div>
           {errors.phone && (
             <p className="text-xs text-red-500 flex items-center space-x-1">
-              <AlertCircle className="h-3.5 w-3.5" /> <span>{errors.phone}</span>
+              <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> <span>{errors.phone}</span>
             </p>
           )}
         </div>
@@ -211,7 +211,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
             Destination *
           </label>
           <div className="relative">
-            <Compass className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+            <Compass className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" aria-hidden="true" />
             <input
               type="text"
               id="destination"
@@ -228,7 +228,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
           </div>
           {errors.destination && (
             <p className="text-xs text-red-500 flex items-center space-x-1">
-              <AlertCircle className="h-3.5 w-3.5" /> <span>{errors.destination}</span>
+              <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> <span>{errors.destination}</span>
             </p>
           )}
         </div>
@@ -239,7 +239,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
             Travel Date *
           </label>
           <div className="relative">
-            <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+            <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" aria-hidden="true" />
             <input
               type="date"
               id="travelDate"
@@ -256,7 +256,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
           </div>
           {errors.travelDate && (
             <p className="text-xs text-red-500 flex items-center space-x-1">
-              <AlertCircle className="h-3.5 w-3.5" /> <span>{errors.travelDate}</span>
+              <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" /> <span>{errors.travelDate}</span>
             </p>
           )}
         </div>
@@ -268,7 +268,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
           Number of Travelers *
         </label>
         <div className="relative">
-          <Users className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+          <Users className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" aria-hidden="true" />
           <input
             type="number"
             id="travelers"
@@ -288,7 +288,7 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
           Your Travel Plan Requirements (Optional)
         </label>
         <div className="relative">
-          <MessageSquare className="absolute left-3.5 top-3 h-4 w-4 text-slate-400" />
+          <MessageSquare className="absolute left-3.5 top-3 h-4 w-4 text-slate-400" aria-hidden="true" />
           <textarea
             id="message"
             name="message"
