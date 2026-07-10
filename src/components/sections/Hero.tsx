@@ -22,15 +22,20 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+      aria-label="Hero - Plan Your Trip with Maheshwari Travels"
+    >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/travel_hero_bg.jpg"
-          alt="Luxury Destination Beach and Mountains"
+          alt="Maheshwari Travels - Scenic travel destinations including beaches and mountains"
           fill
           priority
-          className="object-cover object-center transform scale-105 transition-transform duration-[10000ms] ease-out animate-pulse-slow"
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-slate-900/40" /> {/* Dark gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-slate-900/30" />
@@ -56,6 +61,8 @@ export default function Hero() {
         {/* Search Planner Bar - Glassmorphism */}
         <form
           onSubmit={handleSearchSubmit}
+          aria-label="Search and plan your trip"
+          role="search"
           className="max-w-4xl mx-auto glassmorphism rounded-3xl p-4 sm:p-6 shadow-2xl flex flex-col lg:flex-row gap-4 items-center animate-fade-in-up delay-200"
         >
           {/* Destination */}
@@ -134,7 +141,7 @@ export default function Hero() {
       </div>
 
       {/* Subtle bottom fade to overlay onto sections */}
-      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent" />
-    </div>
+      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent" aria-hidden="true" />
+    </section>
   );
 }

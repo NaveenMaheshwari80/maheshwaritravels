@@ -41,8 +41,9 @@ export default function PopularDestinations() {
             <div className="lg:col-span-7 h-[380px] lg:h-auto min-h-[350px] relative rounded-3xl overflow-hidden shadow-md group border border-slate-100 bg-slate-950 flex flex-col justify-end">
               <Image
                 src={featuredDest[0].image || "/images/travel_hero_bg.jpg"}
-                alt={featuredDest[0].name}
+                alt={`${featuredDest[0].name} - Top travel destination in India`}
                 fill
+                sizes="(max-width: 1024px) 100vw, 58vw"
                 className="object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-transparent" />
@@ -80,8 +81,9 @@ export default function PopularDestinations() {
                 <div className="relative w-full sm:w-1/3 lg:w-1/3 h-full shrink-0">
                   <Image
                     src={dest.image || "/images/travel_hero_bg.jpg"}
-                    alt={dest.name}
+                    alt={`${dest.name} tour packages from Jaipur`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 17vw"
                     className="object-cover object-center transform transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10" />

@@ -48,8 +48,9 @@ export default function FeaturedPackages() {
                 <div className="h-48 w-full relative overflow-hidden group shrink-0">
                   <Image
                     src={pkg.image || "/images/travel_hero_bg.jpg"}
-                    alt={pkg.name}
+                    alt={`${pkg.name} - ${pkg.destination} tour package from ₹${pkg.price.toLocaleString('en-IN')}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-cover object-center transform transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-black/10" />
@@ -123,8 +124,9 @@ export default function FeaturedPackages() {
               <div className="relative w-full lg:w-2/5 min-h-[200px] lg:min-h-full">
                 <Image
                   src={featured[4].image || "/images/travel_hero_bg.jpg"}
-                  alt={featured[4].name}
+                  alt={`${featured[4].name} - Featured package from ₹${featured[4].price.toLocaleString('en-IN')}`}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/50" />
