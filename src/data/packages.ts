@@ -27,6 +27,7 @@ export interface TourPackage {
   hotels: HotelInfo[];
   faqs: { question: string; answer: string }[];
   galleryGradients: string[]; // Premium dynamic gradients for fallback styling
+  image?: string;
 }
 
 export const tourPackages: TourPackage[] = [
@@ -39,6 +40,7 @@ export const tourPackages: TourPackage[] = [
     price: 9999,
     featured: true,
     destination: "Goa",
+    image: "/images/destinations/goa.png",
     highlights: [
       "Visit Baga, Calangute, and Anjuna Beaches",
       "Stunning Sunset Cruise on Mandovi River",
@@ -119,6 +121,7 @@ export const tourPackages: TourPackage[] = [
     price: 18999,
     featured: true,
     destination: "Kashmir",
+    image: "/images/destinations/kashmir.png",
     highlights: [
       "Stay in a traditional luxury Houseboat on Dal Lake",
       "Shikara Ride at sunset on Dal Lake",
@@ -209,6 +212,7 @@ export const tourPackages: TourPackage[] = [
     price: 12999,
     featured: true,
     destination: "Manali",
+    image: "/images/destinations/manali.png",
     highlights: [
       "Snow adventures at Solang Valley & Atal Tunnel",
       "Visit Hadimba Temple and Vashisht Hot Springs",
@@ -356,6 +360,7 @@ export const tourPackages: TourPackage[] = [
     price: 15499,
     featured: true,
     destination: "Kerala",
+    image: "/images/destinations/kerala.png",
     highlights: [
       "Explore Tea Gardens in foggy Munnar",
       "Spice plantations & Wildlife spotting in Thekkady",
@@ -435,6 +440,7 @@ export const tourPackages: TourPackage[] = [
     price: 19999,
     featured: true,
     destination: "Rajasthan",
+    image: "/images/destinations/rajasthan.png",
     highlights: [
       "Explore Jaipur Pink City & Amer Fort",
       "Visit blue city Jodhpur & Mehrangarh Fort",
@@ -518,6 +524,7 @@ export const tourPackages: TourPackage[] = [
     price: 39999,
     featured: true,
     destination: "Dubai",
+    image: "/images/destinations/dubai.png",
     highlights: [
       "Go up to the Burj Khalifa 124th Floor",
       "Thrilling Desert Safari with BBQ Dinner",
@@ -592,6 +599,7 @@ export const tourPackages: TourPackage[] = [
     price: 32999,
     featured: true,
     destination: "Bali",
+    image: "/images/destinations/bali.png",
     highlights: [
       "Stay in a Private Pool Villa in Ubud",
       "Visit Kintamani Volcano & Tegalalang Rice Terraces",

@@ -7,6 +7,7 @@ export interface Destination {
   attractions: string[];
   tips: string[];
   gradientClass: string;
+  image?: string;
 }
 
 export const destinations: Destination[] = [
@@ -22,7 +23,8 @@ export const destinations: Destination[] = [
       "Pre-book Gulmarg Gondola tickets online to avoid long queues.",
       "BSNL, Airtel, and Jio postpaid connections work best in Kashmir."
     ],
-    gradientClass: "from-sky-400 to-indigo-700"
+    gradientClass: "from-sky-400 to-indigo-700",
+    image: "/images/destinations/kashmir.png"
   },
   {
     slug: "goa",
@@ -36,7 +38,8 @@ export const destinations: Destination[] = [
       "Wear cotton clothing and carry plenty of sunscreen.",
       "Avoid swimming in beaches during the monsoon season (June to September)."
     ],
-    gradientClass: "from-teal-400 to-cyan-700"
+    gradientClass: "from-teal-400 to-cyan-700",
+    image: "/images/destinations/goa.png"
   },
   {
     slug: "rajasthan",
@@ -50,7 +53,8 @@ export const destinations: Destination[] = [
       "Try local delicacies like Dal Baati Churma and Lal Maas.",
       "Hire certified tour guides at monument entrances for detailed historical insights."
     ],
-    gradientClass: "from-amber-500 to-red-700"
+    gradientClass: "from-amber-500 to-red-700",
+    image: "/images/destinations/rajasthan.png"
   },
   {
     slug: "kerala",
@@ -64,7 +68,8 @@ export const destinations: Destination[] = [
       "Try Ayurvedic massage therapy at certified government-approved centers.",
       "Respect local customs when visiting ancient temples."
     ],
-    gradientClass: "from-emerald-500 to-teal-800"
+    gradientClass: "from-emerald-500 to-teal-800",
+    image: "/images/destinations/kerala.png"
   },
   {
     slug: "maldives",
@@ -106,7 +111,8 @@ export const destinations: Destination[] = [
       "Carry cash (Indonesian Rupiah) as small vendors and cafes do not accept cards.",
       "Try local dishes like Nasi Goreng, Mie Goreng, and Satay."
     ],
-    gradientClass: "from-emerald-400 to-indigo-800"
+    gradientClass: "from-emerald-400 to-indigo-800",
+    image: "/images/destinations/bali.png"
   },
   {
     slug: "dubai",
@@ -120,7 +126,8 @@ export const destinations: Destination[] = [
       "Observe local laws regarding public behaviour and dress codes.",
       "Purchase entry tickets to Burj Khalifa online in advance to secure sunset slots."
     ],
-    gradientClass: "from-yellow-500 to-orange-700"
+    gradientClass: "from-yellow-500 to-orange-700",
+    image: "/images/destinations/dubai.png"
   },
   {
     slug: "thailand",
@@ -162,7 +169,8 @@ export const destinations: Destination[] = [
       "Enjoy local hot springs in Vashisht, but keep belongings safe.",
       "Pack heavy winter coats if traveling in winter."
     ],
-    gradientClass: "from-cyan-300 to-indigo-700"
+    gradientClass: "from-cyan-300 to-indigo-700",
+    image: "/images/destinations/manali.png"
   },
   {
     slug: "shimla",
@@ -176,6 +184,7 @@ export const destinations: Destination[] = [
       "Be careful with monkeys near Jakhoo Temple; keep food items and glasses inside bags.",
       "Take the toy train from Kalka to Shimla for a scenic, historic journey."
     ],
-    gradientClass: "from-sky-300 to-slate-700"
+    gradientClass: "from-sky-300 to-slate-700",
+    image: "/images/destinations/manali.png" // fallback image
   }
 ];

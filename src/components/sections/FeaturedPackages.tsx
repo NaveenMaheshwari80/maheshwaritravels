@@ -2,11 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
-import { Clock, Tag, Compass, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Clock, Compass, ArrowRight } from "lucide-react";
 import { tourPackages } from "@/data/packages";
 
 export default function FeaturedPackages() {
-  const featured = tourPackages.filter((pkg) => pkg.featured).slice(0, 6);
+  // Show 5 packages on the home page as requested
+  const featured = tourPackages.filter((pkg) => pkg.featured).slice(0, 5);
 
   return (
     <section className="py-20 bg-white">
@@ -33,77 +35,157 @@ export default function FeaturedPackages() {
           </Link>
         </div>
 
-        {/* Packages Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featured.map((pkg) => (
-            <div
-              key={pkg.slug}
-              className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover-card-lift flex flex-col h-full"
-            >
-              {/* Image / Graphic Header */}
-              <div className={`h-52 w-full bg-gradient-to-tr ${pkg.galleryGradients[0] || "from-blue-400 to-indigo-500"} relative flex items-center justify-center text-white px-6 text-center overflow-hidden group`}>
-                {/* Gradient background pattern overlay */}
-                <div className="absolute inset-0 bg-slate-900/10 transition-opacity duration-300 group-hover:bg-slate-900/20" />
-                <Compass className="absolute top-4 right-4 h-6 w-6 text-white/45 animate-pulse-slow" />
-                
-                <div className="space-y-1 relative z-10">
-                  <span className="text-xs font-bold tracking-widest uppercase text-yellow-300 bg-black/25 px-2.5 py-1 rounded-full border border-yellow-300/20">
-                    {pkg.destination}
+        {/* Packages Grid: 5 cards arranged in a busy visual structure: 4 grids + 1 big landscape row package banner */}
+        <div className="space-y-8">
+          {/* Top Grid: 4 items (2 on tablet, 4 on desktop) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featured.slice(0, 4).map((pkg) => (
+              <div
+                key={pkg.slug}
+                className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-md hover:border-emerald-100 transition-all flex flex-col h-full"
+              >
+                {/* Image Header with actual photo overlay */}
+                <div className="h-48 w-full relative overflow-hidden group shrink-0">
+                  <Image
+                    src={pkg.image || "/images/travel_hero_bg.jpg"}
+                    alt={pkg.name}
+                    fill
+                    className="object-cover object-center transform transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-black/10" />
+                  <Compass className="absolute top-4 right-4 h-5 w-5 text-white/60 animate-pulse-slow" />
+                  
+                  <div className="absolute bottom-4 left-4 right-4 text-left">
+                    <span className="text-[10px] font-extrabold tracking-widest uppercase text-yellow-300 bg-black/45 px-2.5 py-1 rounded-full border border-yellow-300/10">
+                      {pkg.destination}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card Body */}
+                <div className="p-5 flex-grow flex flex-col justify-between space-y-4 text-left">
+                  <div className="space-y-3">
+                    <h3 className="text-base font-extrabold text-slate-900 line-clamp-2 leading-snug">
+                      {pkg.name}
+                    </h3>
+                    
+                    {/* Duration & Starting Price */}
+                    <div className="flex items-center justify-between text-xs border-b border-slate-50 pb-3">
+                      <div className="flex items-center text-slate-500 font-semibold">
+                        <Clock className="h-3.5 w-3.5 mr-1 text-blue-500" />
+                        <span>{pkg.duration}</span>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-[10px] text-slate-400 block font-semibold uppercase tracking-wider">
+                          From
+                        </span>
+                        <span className="text-base font-extrabold text-emerald-600">
+                          ₹{pkg.price.toLocaleString("en-IN")}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Highlights Bullet List */}
+                    <ul className="space-y-1.5 text-xs text-slate-600 font-medium">
+                      {pkg.highlights.slice(0, 2).map((hl, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="text-emerald-500 mr-1.5 font-bold select-none">•</span>
+                          <span className="line-clamp-1">{hl}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Card Footer CTA */}
+                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-slate-50 shrink-0">
+                    <Link
+                      href={`/packages/${pkg.slug}`}
+                      className="text-center border border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50 font-bold py-2 rounded-xl text-xs transition-colors flex items-center justify-center"
+                    >
+                      Details
+                    </Link>
+                    <Link
+                      href={`/contact?book=${pkg.slug}`}
+                      className="text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-xl text-xs transition-all shadow-sm flex items-center justify-center"
+                    >
+                      Enquire
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom Large Horizontal Banner Row for 5th Item (Kashmir or Rajasthan etc) */}
+          {featured[4] && (
+            <div className="bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden shadow-lg flex flex-col lg:flex-row min-h-[220px]">
+              {/* Image half side */}
+              <div className="relative w-full lg:w-2/5 min-h-[200px] lg:min-h-full">
+                <Image
+                  src={featured[4].image || "/images/travel_hero_bg.jpg"}
+                  alt={featured[4].name}
+                  fill
+                  className="object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/50" />
+                <div className="absolute top-4 left-4">
+                  <span className="text-[10px] font-extrabold tracking-widest uppercase text-yellow-300 bg-black/60 px-3 py-1.5 rounded-full border border-yellow-300/20">
+                    Featured Deal
                   </span>
-                  <h3 className="text-xl font-bold font-sans drop-shadow-md leading-snug line-clamp-2 pt-1.5">
-                    {pkg.name}
-                  </h3>
                 </div>
               </div>
 
-              {/* Card Body */}
-              <div className="p-6 flex-grow flex flex-col justify-between space-y-6">
+              {/* Content half side */}
+              <div className="p-8 flex-grow flex flex-col justify-between text-white text-left">
                 <div className="space-y-4">
-                  {/* Duration & Starting Price */}
-                  <div className="flex items-center justify-between text-sm border-b border-slate-50 pb-4">
-                    <div className="flex items-center text-slate-500 font-medium">
-                      <Clock className="h-4 w-4 mr-1.5 text-blue-500" />
-                      <span>{pkg.duration}</span>
-                    </div>
-                    <div className="text-right">
-                      <span className="text-[10px] text-slate-400 block font-semibold uppercase tracking-wider">
-                        Starting from
-                      </span>
-                      <span className="text-lg font-extrabold text-blue-600">
-                        ₹{pkg.price.toLocaleString("en-IN")}
-                      </span>
-                    </div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="text-xs font-bold text-emerald-400 bg-emerald-950 border border-emerald-900/40 px-2.5 py-1 rounded-md uppercase">
+                      {featured[4].destination}
+                    </span>
+                    <span className="text-slate-400 text-xs flex items-center gap-1 font-semibold">
+                      <Clock className="h-4 w-4 text-blue-400" /> {featured[4].duration}
+                    </span>
                   </div>
-
-                  {/* Highlights Bullet List */}
-                  <ul className="space-y-2 text-xs sm:text-sm text-slate-600 font-medium">
-                    {pkg.highlights.slice(0, 3).map((hl, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-emerald-500 mr-2 font-bold select-none">•</span>
+                  <h3 className="text-xl sm:text-2xl font-black">{featured[4].name}</h3>
+                  
+                  {/* Highlights Bullet List horizontally */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                    {featured[4].highlights.slice(0, 4).map((hl, i) => (
+                      <div key={i} className="flex items-center text-sm text-slate-300 font-medium">
+                        <span className="text-emerald-400 mr-2 font-bold select-none">✓</span>
                         <span className="line-clamp-1">{hl}</span>
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
-                {/* Card Footer CTA */}
-                <div className="grid grid-cols-2 gap-3 pt-4 border-t border-slate-50">
-                  <Link
-                    href={`/packages/${pkg.slug}`}
-                    className="text-center border border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-50 font-bold py-2.5 rounded-xl text-xs sm:text-sm transition-colors flex items-center justify-center"
-                  >
-                    Itinerary Details
-                  </Link>
-                  <Link
-                    href={`/contact?book=${pkg.slug}`}
-                    className="text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl text-xs sm:text-sm transition-all shadow-md hover:shadow-lg shadow-blue-500/10 flex items-center justify-center"
-                  >
-                    Enquire Now
-                  </Link>
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-6 pt-6 mt-6 border-t border-slate-800">
+                  <div className="text-left">
+                    <span className="text-xs text-slate-400 block font-semibold uppercase tracking-wider">
+                      All-Inclusive Starting Price
+                    </span>
+                    <span className="text-2xl font-black text-emerald-400">
+                      ₹{featured[4].price.toLocaleString("en-IN")}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Link
+                      href={`/packages/${featured[4].slug}`}
+                      className="border border-slate-700 hover:border-slate-600 text-slate-200 hover:bg-slate-800 font-bold px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-colors flex items-center justify-center"
+                    >
+                      View Details
+                    </Link>
+                    <Link
+                      href={`/contact?book=${featured[4].slug}`}
+                      className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black px-6 py-3 rounded-xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center"
+                    >
+                      Book Now
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
     </section>

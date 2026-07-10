@@ -43,9 +43,9 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md py-3 text-slate-800"
-          : "bg-transparent py-5 text-white"
+        isScrolled || pathname !== "/"
+          ? "bg-white/95 backdrop-blur-md shadow-md py-3 text-slate-800 border-b border-slate-100"
+          : "bg-slate-900/40 backdrop-blur-sm py-4 text-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-2 group">
             <Compass
               className={`h-8 w-8 transition-transform duration-500 group-hover:rotate-180 ${
-                isScrolled ? "text-blue-600" : "text-white"
+                isScrolled || pathname !== "/" ? "text-blue-600" : "text-white"
               }`}
             />
             <div className="flex flex-col">
@@ -62,13 +62,13 @@ export default function Navbar() {
                 Maheshwari
               </span>
               <span className={`text-[10px] uppercase tracking-[0.2em] font-semibold -mt-1.5 ${
-                isScrolled ? "text-emerald-600" : "text-emerald-400"
+                isScrolled || pathname !== "/" ? "text-emerald-600" : "text-emerald-400"
               }`}>
                 Travels
               </span>
             </div>
           </Link>
-
+ 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
@@ -77,10 +77,10 @@ export default function Navbar() {
                 href={link.href}
                 className={`text-sm font-medium transition-colors duration-200 relative py-1 hover:text-emerald-500 ${
                   isActive(link.href)
-                    ? isScrolled
+                    ? isScrolled || pathname !== "/"
                       ? "text-blue-600 font-bold"
                       : "text-white font-bold border-b-2 border-emerald-400"
-                    : isScrolled
+                    : isScrolled || pathname !== "/"
                     ? "text-slate-600 hover:text-blue-600"
                     : "text-slate-200 hover:text-white"
                 }`}
@@ -95,7 +95,7 @@ export default function Navbar() {
             <a
               href="tel:9829135440"
               className={`flex items-center space-x-1.5 text-xs font-semibold px-3 py-2 rounded-full border transition-colors ${
-                isScrolled
+                isScrolled || pathname !== "/"
                   ? "border-slate-200 text-slate-700 hover:bg-slate-50"
                   : "border-white/30 text-white hover:bg-white/10"
               }`}
@@ -110,14 +110,14 @@ export default function Navbar() {
               Book Now
             </Link>
           </div>
-
+ 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
               className={`p-2 rounded-md transition-colors ${
-                isScrolled
+                isScrolled || pathname !== "/"
                   ? "text-slate-800 hover:bg-slate-100"
                   : "text-white hover:bg-white/10"
               }`}
