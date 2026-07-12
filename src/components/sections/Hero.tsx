@@ -33,6 +33,7 @@ export default function Hero() {
           alt="Maheshwari Travels - Scenic travel destinations including beaches and mountains"
           fill
           priority
+          loading="eager"
           fetchPriority="high"
           quality={60}
           sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"

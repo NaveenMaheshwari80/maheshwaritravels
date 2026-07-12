@@ -113,8 +113,8 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <h4 className="font-bold text-slate-800 text-sm sm:text-base">Business Hours</h4>
                   <p className="text-slate-600 text-xs sm:text-sm leading-normal font-semibold">
-                    Monday - Saturday: 09:00 AM - 08:00 PM<br />
-                    Sunday: Closed (Helplines Active)
+                    Services : 24/7 Available <br />
+                    Helpline Hours : 8:00AM to 10:00PM
                   </p>
                 </div>
               </div>

@@ -21,25 +21,50 @@ export const metadata: Metadata = {
     default: "Maheshwari Travels | Tour Packages & Travel Agency in Jaipur",
     template: "%s | Maheshwari Travels",
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
   description:
-    "Book customized domestic & international tour packages, honeymoon trips, luxury holidays, flight tickets, hotel bookings, car rentals & visa assistance with Maheshwari Travels, Jaipur. Call: +91 9829135440.",
+    "Best Cab & Taxi Rental Service in Jaipur, Jhotwara & Vaishali Nagar. Book Swift Dzire (₹11/km), Toyota Etios (₹11/km), Ertiga 7 Seater (₹14/km), Innova Classic (₹17/km), Innova Crysta (₹18/km), Tempo Traveller (₹26/km) & Luxury Bus alongside customized Rajasthan, Kashmir, Goa & Domestic Tour Packages. Call: +91 9829135440.",
   keywords: [
     "Maheshwari Travels",
-    "travel agency Jaipur",
-    "tour packages Jaipur",
-    "Kashmir tour package",
-    "Goa tour package",
-    "Rajasthan tour package",
-    "honeymoon package Jaipur",
-    "international tour packages",
-    "visa assistance Jaipur",
+    "Maheshwari Travels Jaipur",
+    "Maheshwari Travels Jhotwara",
+    "cab service Jhotwara Jaipur",
+    "taxi service Jhotwara Jaipur",
+    "cab rental Vaishali Nagar Jaipur",
+    "taxi service Vaishali Nagar Jaipur",
+    "car rental near me Jaipur",
+    "Swift Dzire taxi service Jaipur",
+    "Swift Dzire cab Jhotwara",
+    "Toyota Etios taxi Jaipur",
+    "Ertiga 7 seater cab Jaipur",
+    "Ertiga taxi service Jhotwara",
+    "Innova Crysta on rent Jaipur",
+    "Innova Crysta taxi service Jhotwara",
+    "Toyota Innova Classic hire Jaipur",
+    "Tempo Traveller hire in Jaipur",
+    "Tempo Traveller 16 seater rent Jaipur",
+    "Tempo Traveller Jhotwara Vaishali Nagar",
+    "Force Urbania luxury van rent Jaipur",
+    "luxury AC tourist bus hire Jaipur",
+    "56 seater bus rental Jaipur",
+    "outstation taxi service Jaipur",
+    "Chardham Yatra cab from Jaipur",
+    "Jaipur to Khatu Shyam Ji cab service",
+    "Jaipur to Salasar Balaji taxi",
+    "Jaipur airport pickup drop cab",
+    "best travel agency in Jaipur",
+    "best tour planner Jhotwara Jaipur",
     "Deepak Maheshwari travels",
-    "cab rental Jaipur",
-    "MICE corporate travel",
-    "Kerala tour package",
-    "Manali tour package",
-    "Dubai tour package",
-    "Bali tour package",
+    "Rajasthan tour package from Jaipur",
+    "Kashmir tour package from Jaipur",
+    "Goa tour package from Jaipur",
   ],
 
   authors: [{ name: "Deepak Maheshwari", url: BASE_URL }],
@@ -99,12 +124,12 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": ["TravelAgency", "LocalBusiness"],
+  "@type": ["TravelAgency", "LocalBusiness", "TaxiService", "AutoRental"],
   "@id": `${BASE_URL}/#organization`,
   name: "Maheshwari Travels",
-  alternateName: "Maheshwari Travels Jaipur",
+  alternateName: "Maheshwari Travels Jaipur Cab Rental",
   description:
-    "Premium travel agency based in Jhotwara, Jaipur offering customized domestic and international tour packages, honeymoon trips, hotel bookings, flight tickets, car rentals, and visa assistance.",
+    "Top-rated taxi service & travel planner based in Jhotwara, Jaipur. Offering Swift Dzire, Toyota Etios, Maruti Ertiga, Toyota Innova Classic, Innova Crysta, Tempo Traveller & Luxury Bus rentals on ₹/km tariff, plus customized tour packages across India.",
   url: BASE_URL,
   logo: {
     "@type": "ImageObject",
@@ -115,7 +140,7 @@ const organizationSchema = {
   image: `${BASE_URL}/images/travel_hero_bg.jpg`,
   telephone: ["+919829135440", "+918209411937", "+919983173115"],
   email: "info@maheshwaritravels.com",
-  priceRange: "₹₹",
+  priceRange: "₹11 - ₹32 per km",
   currenciesAccepted: "INR",
   paymentAccepted: "Cash, UPI, Net Banking, Credit Card",
   address: {
@@ -142,9 +167,10 @@ const organizationSchema = {
         "Thursday",
         "Friday",
         "Saturday",
+        "Sunday",
       ],
-      opens: "09:00",
-      closes: "20:00",
+      opens: "00:00",
+      closes: "23:59",
     },
   ],
   sameAs: [
@@ -160,10 +186,95 @@ const organizationSchema = {
     worksFor: { "@id": `${BASE_URL}/#organization` },
   },
   areaServed: [
-    { "@type": "Country", name: "India" },
-    { "@type": "AdministrativeArea", name: "Rajasthan" },
     { "@type": "City", name: "Jaipur" },
+    { "@type": "Place", name: "Jhotwara, Jaipur" },
+    { "@type": "Place", name: "Vaishali Nagar, Jaipur" },
+    { "@type": "Place", name: "Mansarovar, Jaipur" },
+    { "@type": "Place", name: "Malviya Nagar, Jaipur" },
+    { "@type": "Place", name: "Raja Park, Jaipur" },
+    { "@type": "Place", name: "Bani Park, Jaipur" },
+    { "@type": "Place", name: "C-Scheme, Jaipur" },
+    { "@type": "Place", name: "Sodala, Jaipur" },
+    { "@type": "Place", name: "Jaipur Airport (JAI)" },
+    { "@type": "AdministrativeArea", name: "Rajasthan" },
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Jaipur Cab & Bus Rental Tariff",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Swift Dzire Taxi Service Jaipur",
+          description: "Comfortable 4-seater sedan cab rental for local Jaipur sightseeing & outstation tours."
+        },
+        priceSpecification: { "@type": "UnitPriceSpecification", price: "11", priceCurrency: "INR", unitText: "Per Kilometer" }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Toyota Etios Taxi Rental Jaipur",
+          description: "Spacious luggage-friendly 4-seater cab rental for Chardham & Rajasthan outstation trips."
+        },
+        priceSpecification: { "@type": "UnitPriceSpecification", price: "11", priceCurrency: "INR", unitText: "Per Kilometer" }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Maruti Ertiga 7-Seater Cab Jaipur",
+          description: "Ideal family MUV 7-seater taxi rental with roof carrier & AC comfort."
+        },
+        priceSpecification: { "@type": "UnitPriceSpecification", price: "14", priceCurrency: "INR", unitText: "Per Kilometer" }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Toyota Innova Classic Rental Jaipur",
+          description: "Reliable & rugged 7-seater SUV cab ideal for outstation Rajasthan tours & airport pickups."
+        },
+        priceSpecification: { "@type": "UnitPriceSpecification", price: "17", priceCurrency: "INR", unitText: "Per Kilometer" }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Toyota Innova Crysta Luxury Taxi Jaipur",
+          description: "Executive VIP luxury 7-seater MPV cab with plush captain seats & superior ride comfort."
+        },
+        priceSpecification: { "@type": "UnitPriceSpecification", price: "18", priceCurrency: "INR", unitText: "Per Kilometer" }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Tempo Traveller Rental Jaipur (9 to 26 Seater)",
+          description: "Spacious luxury AC Tempo Traveller for group tours, weddings, corporate trips & outstation journeys."
+        },
+        priceSpecification: { "@type": "UnitPriceSpecification", price: "26", priceCurrency: "INR", unitText: "Per Kilometer" }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Force Urbania Luxury Van Hire Jaipur",
+          description: "State-of-the-art European style luxury van with panoramic windows & airline seating."
+        },
+        priceSpecification: { "@type": "UnitPriceSpecification", price: "32", priceCurrency: "INR", unitText: "Per Kilometer" }
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Luxury AC Tourist Bus / Coach Hire Jaipur",
+          description: "Premium 35 to 56 seater luxury tourist coaches for destination weddings, conferences & group travel."
+        }
+      }
+    ]
+  },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",

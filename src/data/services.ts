@@ -30,30 +30,11 @@ export const services: Service[] = [
     bannerGradient: "from-blue-600 to-indigo-800"
   },
   {
-    slug: "international-tours",
-    title: "International Tours",
-    iconName: "Globe",
-    shortDesc: "Embark on global journeys to iconic destinations with complete peace of mind.",
-    description: "Cross borders and experience the world. Whether you dream of shopping in Dubai, relaxing on the white sands of the Maldives, exploring the historical landmarks of Europe, or seeking adventure in Southeast Asia, our international tour packages cover everything from flights and stays to visas and sightseeing.",
-    features: [
-      "End-to-end itinerary management",
-      "Verified premium international hotel stays",
-      "Bilingual local guides and transfers",
-      "Tailor-made itineraries for couples, families, and groups"
-    ],
-    benefits: [
-      "Complete visa guidance and assistance",
-      "Hassle-free international travel insurance inclusion",
-      "Best rates for multi-city flight bookings"
-    ],
-    bannerGradient: "from-teal-600 to-emerald-800"
-  },
-  {
     slug: "honeymoon-packages",
     title: "Honeymoon Packages",
     iconName: "Heart",
     shortDesc: "Celebrate your love in romantic destinations with customized luxury layouts.",
-    description: "Begin your beautiful journey together with our romantic honeymoon packages. We design intimate and luxurious escapes featuring candle-lit dinners, private sightseeing, floral room decorations, and exclusive couples' experiences in romantic destinations like Switzerland, Maldives, Bali, Kashmir, and Kerala.",
+    description: "Begin your beautiful journey together with our romantic honeymoon packages. We design intimate and luxurious escapes featuring candle-lit dinners, private sightseeing, floral room decorations, and exclusive couples' experiences in romantic destinations across India like Kashmir, Kerala, Goa, and Himachal.",
     features: [
       "Romantic room setup and surprise welcome amenities",
       "Private candle-lit dinners and couples spa sessions",
@@ -89,7 +70,7 @@ export const services: Service[] = [
   {
     slug: "group-tours",
     title: "Group Tours",
-    iconName: "Users3", // We will map this to Lucide's Users or similar in code
+    iconName: "Users3",
     shortDesc: "Fun-filled, safe, and highly coordinated group travel adventures.",
     description: "Travel is better together. Join our fun-filled fixed departure group tours or create a custom private group tour for your friends, community, or colleagues. Enjoy shared laughs, cost-efficient booking deals, and professional group leaders managing every single detail.",
     features: [
@@ -125,82 +106,6 @@ export const services: Service[] = [
     bannerGradient: "from-slate-700 to-slate-900"
   },
   {
-    slug: "hotel-booking",
-    title: "Hotel Booking",
-    iconName: "Home", // Map to Lucide's Hotel / Building or Home
-    shortDesc: "Exclusive partnerships with luxury resorts, heritage villas, and budget stays.",
-    description: "Unlock special corporate and retail rates at hotels worldwide. Through our established global network of partners, we offer rooms at verified, top-rated hotels, boutique home-stays, historic heritage havelis, and five-star luxury resorts at rates lower than public booking portals.",
-    features: [
-      "Access to exclusive wholesale and offline rates",
-      "Verified properties with consistent hygienic standards",
-      "Flexible cancelation and dynamic late checkout permissions",
-      "Special inclusions like free breakfast, Wi-Fi, and upgrades"
-    ],
-    benefits: [
-      "Personalized room requests (view preference, high floor, etc.)",
-      "Direct backup contact at the hotel front office",
-      "Vast selection from budget to super-luxury properties"
-    ],
-    bannerGradient: "from-sky-500 to-blue-700"
-  },
-  {
-    slug: "flight-booking",
-    title: "Flight Booking",
-    iconName: "Plane",
-    shortDesc: "Instant flight ticketing, group flight bookings, and corporate air fares.",
-    description: "Get the best flight routes and special travel fares. We manage domestic and international flight ticketing, group seats for weddings and business tours, seat selection, meal preferences, excess baggage bookings, and direct assistance in case of flight delays or cancelations.",
-    features: [
-      "Access to special offline and corporate flight inventories",
-      "Instant group ticketing with flexible name-entry timelines",
-      "Complimentary web check-in and boarding pass delivery",
-      "Real-time alerts on flight schedule changes"
-    ],
-    benefits: [
-      "Hassle-free refunds and transparent cancellation fee structure",
-      "Liaison directly with airlines on your behalf",
-      "Baggage and wheelchair assistance booking options"
-    ],
-    bannerGradient: "from-blue-400 to-indigo-600"
-  },
-  {
-    slug: "visa-assistance",
-    title: "Visa Assistance",
-    iconName: "ClipboardCheck",
-    shortDesc: "Expert document verification and visa processing with high success rates.",
-    description: "Visa processing can be tedious and stressful. Our expert visa counseling team reviews your documents, guides you on finances, formats invitation letters, schedules embassy appointments, and submits applications meticulously to maximize your visa approval probability for US, UK, Schengen, Canada, Dubai, and Singapore.",
-    features: [
-      "Detailed document checklist customized to your profile",
-      "Meticulous visa application form review and filling",
-      "Mock interviews and interview scheduling support",
-      "Regular updates on your application status"
-    ],
-    benefits: [
-      "Highly experienced team with deep understanding of visa rules",
-      "Minimize the risk of visa rejection due to document errors",
-      "Doorstep document pick-up and delivery options"
-    ],
-    bannerGradient: "from-emerald-500 to-teal-700"
-  },
-  {
-    slug: "passport-services",
-    title: "Passport Services",
-    iconName: "FileText",
-    shortDesc: "Hassle-free passport applications, renewals, and Tatkaal assistance.",
-    description: "We simplify passport documentation. Whether you are applying for a fresh passport, seeking a renewal for an expiring passport, changing addresses, or processing an urgent Tatkaal application, we walk you through the documents, fill out the online forms, and book your slots at the Passport Seva Kendra.",
-    features: [
-      "Fresh passport and renewal application booking",
-      "Tatkaal passport application guidance",
-      "Name-change and address-change document processing",
-      "E-passport and damage-passport consultation"
-    ],
-    benefits: [
-      "Avoid standing in lines or making booking mistakes",
-      "Expert scrutiny of birth certificates, affidavits, and IDs",
-      "Complete transparency on government fees"
-    ],
-    bannerGradient: "from-cyan-600 to-blue-800"
-  },
-  {
     slug: "car-rental",
     title: "Car & Coach Rental",
     iconName: "Car",
@@ -218,24 +123,5 @@ export const services: Service[] = [
       "No hidden driver allowance or parking pricing surprises"
     ],
     bannerGradient: "from-neutral-700 to-neutral-900"
-  },
-  {
-    slug: "travel-insurance",
-    title: "Travel Insurance",
-    iconName: "Shield",
-    shortDesc: "Secure your trips against medical emergencies, cancellations, and baggage loss.",
-    description: "Protect your travels and finances. We offer comprehensive travel insurance packages covering medical emergency costs abroad, flight delay compensations, trip cancellation losses, lost passport recovery assistance, and baggage loss coverage. Essential for complete peace of mind.",
-    features: [
-      "High medical expense coverage limits including pre-existing conditions",
-      "Trip delay, cancellation, and interruption reimbursement plans",
-      "Loss of checked-in baggage and passport support options",
-      "Global toll-free emergency helpline access"
-    ],
-    benefits: [
-      "Cashless hospitalization networks globally",
-      "Fast and structured insurance claim settlement guidance",
-      "Affordable premiums custom to your age and itinerary duration"
-    ],
-    bannerGradient: "from-green-600 to-emerald-800"
   }
 ];

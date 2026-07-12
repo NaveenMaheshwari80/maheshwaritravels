@@ -43,6 +43,8 @@ export default function PopularDestinations() {
                 src={featuredDest[0].image || "/images/travel_hero_bg.jpg"}
                 alt={`${featuredDest[0].name} - Top travel destination in India`}
                 fill
+                priority
+                loading="eager"
                 quality={65}
                 sizes="(max-width: 640px) 640px, (max-width: 1024px) 800px, 700px"
                 className="object-cover object-center transform transition-transform duration-700 group-hover:scale-105"

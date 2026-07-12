@@ -193,6 +193,28 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Popular Cab & Taxi SEO Keyword Cluster for Jaipur */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-4 border-t border-slate-800/80 text-center md:text-left">
+        <div className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3 flex items-center justify-center md:justify-start gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Popular Taxi & Cab Searches in Jaipur
+        </div>
+        <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1.5 text-[11px] text-slate-400">
+          <span className="hover:text-white transition-colors cursor-default">Taxi Service in Jhotwara Jaipur</span> •
+          <span className="hover:text-white transition-colors cursor-default">Cab Service Vaishali Nagar Jaipur</span> •
+          <span className="hover:text-white transition-colors cursor-default">Swift Dzire Taxi Jaipur (₹11/km)</span> •
+          <span className="hover:text-white transition-colors cursor-default">Toyota Etios Cab Rental Jaipur</span> •
+          <span className="hover:text-white transition-colors cursor-default">Ertiga 7-Seater Taxi Jhotwara</span> •
+          <span className="hover:text-white transition-colors cursor-default">Innova Crysta on Rent in Jaipur</span> •
+          <span className="hover:text-white transition-colors cursor-default">Tempo Traveller Hire Jaipur (16 Seater)</span> •
+          <span className="hover:text-white transition-colors cursor-default">Force Urbania Luxury Van Jaipur</span> •
+          <span className="hover:text-white transition-colors cursor-default">Luxury Tourist Bus Rental Jaipur</span> •
+          <span className="hover:text-white transition-colors cursor-default">Jaipur Airport Pickup Drop Cab</span> •
+          <span className="hover:text-white transition-colors cursor-default">Jaipur to Khatu Shyam Ji Cab</span> •
+          <span className="hover:text-white transition-colors cursor-default">Jaipur to Salasar Balaji Taxi</span> •
+          <span className="hover:text-white transition-colors cursor-default">Best Travel Agency Jhotwara Jaipur</span>
+        </div>
+      </div>
+
       {/* Footer Bottom Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
         <div className="text-center md:text-left">
