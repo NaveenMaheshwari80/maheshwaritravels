@@ -18,152 +18,9 @@ import {
   Bus,
 } from "lucide-react";
 
-interface Vehicle {
-  id: string;
-  name: string;
-  category: "sedan" | "suv" | "van" | "bus";
-  price: string;
-  priceSub: string;
-  seats: string;
-  acType: string;
-  image: string;
-  badge: string;
-  badgeColor: string;
-  description: string;
-  features: string[];
-  idealFor: string;
-}
+import { cabs, CabVehicle as Vehicle } from "@/data/cabs";
 
-const FLEET_DATA: Vehicle[] = [
-  {
-    id: "dzire",
-    name: "Swift Dzire",
-    category: "sedan",
-    price: "₹11 - ₹12",
-    priceSub: "per kilometer",
-    seats: "4 + 1 Seats",
-    acType: "Chilled AC",
-    image: "/images/cars/swift-dzire.jpg",
-    badge: "Most Economical",
-    badgeColor: "bg-emerald-500 text-white",
-    description:
-      "Comfortable compact sedan ideal for small families, quick business trips, and budget-friendly outstation highway rides.",
-    features: ["4+1 Seating", "Ample Boot Space", "Music System", "Pocket Friendly"],
-    idealFor: "Couples, Solo travelers, City visits & Quick airport drops",
-  },
-  {
-    id: "etios",
-    name: "Toyota Etios",
-    category: "sedan",
-    price: "₹11 - ₹12",
-    priceSub: "per kilometer",
-    seats: "4 + 1 Seats",
-    acType: "Superior AC",
-    image: "/images/cars/toyota-etios.jpg",
-    badge: "Spacious Sedan",
-    badgeColor: "bg-blue-600 text-white",
-    description:
-      "Known for extra rear legroom and large luggage capacity. Perfect choice for comfortable long-distance highway cruising.",
-    features: ["Extra Legroom", "Large Boot Space", "Silent Cabin", "Super Reliable"],
-    idealFor: "Families with heavy luggage, Airport transfers & Outstation tours",
-  },
-  {
-    id: "ertiga",
-    name: "Maruti Suzuki Ertiga",
-    category: "suv",
-    price: "₹14 - ₹15",
-    priceSub: "per kilometer",
-    seats: "6/7 + 1 Seats",
-    acType: "Dual Roof AC",
-    image: "/images/cars/ertiga.jpg",
-    badge: "Best Family Choice",
-    badgeColor: "bg-purple-600 text-white",
-    description:
-      "The most popular 7-seater MUV in India offering a smooth ride, flexible seating, and roof-mounted AC vents for all rows.",
-    features: ["3-Row AC Vents", "Flexible Luggage Space", "Pushback Seats", "Smooth Ride"],
-    idealFor: "Medium families, Hill station trips (Kashmir/Himachal) & Weekend getaways",
-  },
-  {
-    id: "innova-classic",
-    name: "Toyota Innova (Classic)",
-    category: "suv",
-    price: "₹17",
-    priceSub: "per kilometer",
-    seats: "7/8 + 1 Seats",
-    acType: "Dual Roof AC",
-    image: "https://www.pngkey.com/png/detail/364-3644037_toyota-inova-innova-car-new-model-2015.png",
-    badge: "Popular Highway MUV",
-    badgeColor: "bg-orange-600 text-white",
-    description:
-      "The evergreen highway workhorse. Known for comfortable 3-row seating, robust reliability, and smooth ride on all terrains at a budget-friendly rate.",
-    features: ["3-Row AC Vents", "Spacious Cabin", "Pushback Seats", "Rugged Reliability"],
-    idealFor: "Family pilgrimages, Rajasthan tours, Group trips & Outstation tours",
-  },
-  {
-    id: "innova",
-    name: "Toyota Innova Crysta",
-    category: "suv",
-    price: "₹18",
-    priceSub: "per kilometer",
-    seats: "7/8 + 1 Seats",
-    acType: "Climate Control AC",
-    image: "/images/cars/innova-crysta.jpg",
-    badge: "VIP Luxury MPV",
-    badgeColor: "bg-amber-600 text-white",
-    description:
-      "The undisputed king of highway comfort. Premium captain seats, unmatched safety, and powerful engine for effortless touring.",
-    features: ["Captain Pushback Seats", "Surround AC", "VIP Interior", "Superior Suspension"],
-    idealFor: "VIP/Corporate guests, Luxury family tours, Rajasthan & Long pilgrimages",
-  },
-  {
-    id: "tempo",
-    name: "Tempo Traveller (Luxury)",
-    category: "van",
-    price: "₹26",
-    priceSub: "per kilometer",
-    seats: "9 / 12 / 16 / 20+ Seats",
-    acType: "Blower Roof AC",
-    image: "/images/cars/tempo-traveller.jpg",
-    badge: "Group Special",
-    badgeColor: "bg-rose-600 text-white",
-    description:
-      "Customized luxury tempo travellers equipped with sofa pushback seats, LED TV, mood lighting, and high roof standing comfort.",
-    features: ["2x1 Luxury Pushback", "LED TV & Sound System", "USB Charging", "Curtains & Carpet"],
-    idealFor: "Group vacations, Marriage functions, Chardham Yatra & Corporate picnics",
-  },
-  {
-    id: "urbania",
-    name: "Force Urbania",
-    category: "van",
-    price: "₹32",
-    priceSub: "per kilometer",
-    seats: "10 to 17 Seats",
-    acType: "Dual Zone Chiller AC",
-    image: "/images/cars/force-urbania.jpg",
-    badge: "Ultra Luxury Van",
-    badgeColor: "bg-slate-900 text-amber-400 border border-amber-400/40",
-    description:
-      "State-of-the-art aerodynamic executive van with airplane-like cabin, individual AC vents, reading lamps, and panoramic windows.",
-    features: ["Airliner Style Cabin", "Panoramic Windows", "Individual Reading Lights", "Air Suspension"],
-    idealFor: "Foreign tourists, Executive delegations, Premium destination weddings",
-  },
-  {
-    id: "bus",
-    name: "Luxury AC Tourist Coach / Bus",
-    category: "bus",
-    price: "Contact Us",
-    priceSub: "35 to 56 seats luxury bus",
-    seats: "35 / 42 / 52 / 56 Seats",
-    acType: "Air Suspension AC",
-    image: "/images/cars/luxury-bus.jpg",
-    badge: "Large Group Coach",
-    badgeColor: "bg-indigo-600 text-white",
-    description:
-      "Spacious luxury 2x2 pushback AC tourist buses and coaches equipped with air suspension, large luggage booth, LED entertainment, and reading lights.",
-    features: ["2x2 Pushback Seats", "Air Suspension Ride", "Massive Luggage Booth", "PA & Sound System"],
-    idealFor: "Big marriage parties, Corporate conferences, School/College tours & Pilgrimages",
-  },
-];
+const FLEET_DATA = cabs;
 
 export default function CabFleetSection({ showBillingTerms = false }: { showBillingTerms?: boolean } = {}) {
   const [activeTab, setActiveTab] = useState<"all" | "sedan" | "suv" | "van" | "bus">("all");
@@ -430,21 +287,29 @@ export default function CabFleetSection({ showBillingTerms = false }: { showBill
               </div>
 
               {/* Action Buttons */}
-              <div className="p-6 pt-0 flex flex-col sm:flex-row gap-2.5">
-                <a
-                  href={getWhatsAppUrl(car.name, car.price)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 px-4 rounded-2xl text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-emerald-500/30 flex items-center justify-center gap-1.5 text-center"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  <span>WhatsApp Book</span>
-                </a>
+              <div className="p-6 pt-0 space-y-2.5">
+                <div className="flex flex-col sm:flex-row gap-2.5">
+                  <a
+                    href={getWhatsAppUrl(car.name, car.price)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 px-4 rounded-2xl text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-emerald-500/30 flex items-center justify-center gap-1.5 text-center"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    <span>WhatsApp Book</span>
+                  </a>
+                  <Link
+                    href={`/contact?service=Car%20Rental&vehicle=${encodeURIComponent(car.name)}`}
+                    className="flex-1 bg-slate-900 hover:bg-blue-600 text-white font-extrabold py-3 px-4 rounded-2xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-1.5 text-center"
+                  >
+                    <span>Enquire Tariff</span>
+                  </Link>
+                </div>
                 <Link
-                  href={`/contact?service=Car%20Rental&vehicle=${encodeURIComponent(car.name)}`}
-                  className="flex-1 bg-slate-900 hover:bg-blue-600 text-white font-extrabold py-3 px-4 rounded-2xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-1.5 text-center"
+                  href={`/cabs/${car.slug}`}
+                  className="block w-full text-center py-2 bg-slate-50 hover:bg-blue-50 text-blue-600 hover:text-blue-700 font-bold text-xs rounded-xl border border-slate-200 hover:border-blue-200 transition-colors"
                 >
-                  <span>Enquire Tariff</span>
+                  View Full {car.name} Tariff & Details →
                 </Link>
               </div>
             </div>
