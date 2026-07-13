@@ -175,7 +175,7 @@ export default function JaipurLocalSEOSection() {
               <PhoneCall className="h-4 w-4" /> Call +91 9829135440
             </a>
             <a
-              href="https://wa.me/919829135440?text=Hello%2C%20I%20am%20looking%20for%20a%20cab%20%2F%20tour%20booking%20in%20Jaipur."
+              href="https://wa.me/918209411937?text=Hello%2C%20I%20am%20looking%20for%20a%20cab%20%2F%20tour%20booking%20in%20Jaipur."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-emerald-600 hover:bg-emerald-500 text-white font-black px-8 py-4 rounded-2xl text-sm uppercase tracking-wider transition-all shadow-lg shadow-emerald-600/20 text-center flex items-center justify-center gap-2"

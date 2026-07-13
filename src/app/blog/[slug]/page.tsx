@@ -138,7 +138,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
                   <span>Call +91 9829135440</span>
                 </a>
                 <a
-                  href="https://wa.me/919829135440"
+                  href="https://wa.me/918209411937?text=Hi%2C%20I%20have%20a%20query%20from%20your%20blog%20article."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 rounded-xl text-xs sm:text-sm flex items-center justify-center space-x-2 transition-colors shadow-md shadow-emerald-500/10"

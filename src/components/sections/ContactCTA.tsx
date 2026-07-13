@@ -34,7 +34,7 @@ export default function ContactCTA() {
 
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/919829135440?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20a%20tour%20package."
+            href="https://wa.me/918209411937?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20a%20tour%20package."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-4 rounded-full text-sm sm:text-base transition-all shadow-lg hover:shadow-xl hover:shadow-emerald-500/20 flex items-center justify-center space-x-2"

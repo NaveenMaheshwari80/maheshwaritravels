@@ -75,8 +75,20 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
 
     setIsSubmitting(true);
 
-    // Simulate API Request
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const whatsappText = `*New Free Custom Quote / Tariff Enquiry*
+-----------------------------------------
+👤 *Name:* ${formData.name}
+📱 *Phone:* ${formData.phone}
+📧 *Email:* ${formData.email}
+📍 *Destination / Service:* ${formData.destination}
+📅 *Travel Date:* ${formData.travelDate}
+👥 *Travelers:* ${formData.travelers} Guest(s)
+💬 *Special Requirements:* ${formData.message || "None"}
+-----------------------------------------
+Hello Maheshwari Travels, please share the exact itinerary & quote/tariff for my trip!`;
+
+    const whatsappUrl = `https://wa.me/918209411937?text=${encodeURIComponent(whatsappText)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
     setIsSubmitting(false);
     setSubmitSuccess(true);
@@ -93,18 +105,28 @@ export default function EnquiryForm({ defaultDestination = "", className = "" }:
 
   if (submitSuccess) {
     return (
-      <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center shadow-lg transition-all animate-fade-in-up">
-        <CheckCircle2 className="h-16 w-16 text-emerald-500 mx-auto mb-4 animate-bounce" />
-        <h3 className="text-xl font-bold text-slate-900 mb-2">Enquiry Submitted Successfully!</h3>
-        <p className="text-sm text-slate-600 mb-6 leading-relaxed">
-          Thank you for reaching out to Maheshwari Travels. Our travel expert, <strong>Deepak Maheshwari</strong>, or one of our senior travel advisers will contact you within the next 2-4 hours with a custom itinerary.
+      <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 text-center shadow-lg transition-all animate-fade-in-up space-y-4">
+        <CheckCircle2 className="h-16 w-16 text-emerald-500 mx-auto animate-bounce" />
+        <h3 className="text-xl font-bold text-slate-900">Enquiry Sent to WhatsApp!</h3>
+        <p className="text-sm text-slate-600 leading-relaxed max-w-md mx-auto">
+          Your enquiry has been formatted and opened directly on our official WhatsApp inquiry desk (<strong className="text-slate-900">+91 8209411937</strong>). We will respond to you within minutes!
         </p>
-        <button
-          onClick={() => setSubmitSuccess(false)}
-          className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500"
-        >
-          Submit Another Enquiry
-        </button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+          <a
+            href={`https://wa.me/918209411937?text=${encodeURIComponent("Hello Maheshwari Travels, following up on my recently submitted website quote request.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold px-6 py-2.5 rounded-full transition-colors flex items-center justify-center gap-2 shadow-md"
+          >
+            <span>Open WhatsApp Chat (+91 8209411937)</span>
+          </a>
+          <button
+            onClick={() => setSubmitSuccess(false)}
+            className="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-slate-500"
+          >
+            Submit Another Enquiry
+          </button>
+        </div>
       </div>
     );
   }

@@ -80,8 +80,8 @@ export default async function CabDetailPage({ params }: PageProps) {
     }
   };
 
-  const whatsappUrl = `https://wa.me/919829135440?text=${encodeURIComponent(
-    `Hi Deepak ji, I want to inquire about booking ${cab.name} (${cab.price} ${cab.priceSub}). Please share availability and exact quote.`
+  const whatsappUrl = `https://wa.me/918209411937?text=${encodeURIComponent(
+    `Hi Maheshwari Travels, I want to Enquire Tariff and booking details for ${cab.name} (${cab.price} ${cab.priceSub}). Please share availability and exact quote.`
   )}`;
 
   // Filter other cabs to recommend

@@ -123,7 +123,7 @@ export default function ContactPage() {
             {/* Quick WhatsApp button */}
             <div className="pt-2">
               <a
-                href="https://wa.me/919829135440?text=Hi%2C%20I%20have%20an%20enquiry%20regarding%20packages."
+                href="https://wa.me/918209411937?text=Hi%2C%20I%20have%20an%20enquiry%20regarding%20packages."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold p-4 rounded-2xl shadow-lg hover:shadow-emerald-500/10 flex items-center justify-center space-x-2 transition-all cursor-pointer"

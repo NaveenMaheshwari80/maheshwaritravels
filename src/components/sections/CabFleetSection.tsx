@@ -32,7 +32,14 @@ export default function CabFleetSection({ showBillingTerms = false }: { showBill
     const text = encodeURIComponent(
       `Hello Maheshwari Travels, I want to inquire about booking ${carName} (${price}) on ₹/km basis or outstation package. Please confirm availability and terms (Min 300km/day rule applicable).`
     );
-    return `https://wa.me/919876543210?text=${text}`;
+    return `https://wa.me/918209411937?text=${text}`;
+  };
+
+  const getTariffInquiryUrl = (carName: string, price: string, priceSub: string) => {
+    const text = encodeURIComponent(
+      `Hello Maheshwari Travels, I want to Enquire Tariff and outstation quote for ${carName} (${price} ${priceSub}). Please share exact per km fare, toll/parking policies, and minimum daily distance rules.`
+    );
+    return `https://wa.me/918209411937?text=${text}`;
   };
 
   return (
@@ -298,12 +305,14 @@ export default function CabFleetSection({ showBillingTerms = false }: { showBill
                     <MessageCircle className="h-4 w-4" />
                     <span>WhatsApp Book</span>
                   </a>
-                  <Link
-                    href={`/contact?service=Car%20Rental&vehicle=${encodeURIComponent(car.name)}`}
-                    className="flex-1 bg-slate-900 hover:bg-blue-600 text-white font-extrabold py-3 px-4 rounded-2xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-1.5 text-center"
+                  <a
+                    href={getTariffInquiryUrl(car.name, car.price, car.priceSub)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-slate-900 hover:bg-blue-600 text-white font-extrabold py-3 px-4 rounded-2xl text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-1.5 text-center cursor-pointer"
                   >
                     <span>Enquire Tariff</span>
-                  </Link>
+                  </a>
                 </div>
                 <Link
                   href={`/cabs/${car.slug}`}
